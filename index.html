@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VRNas — Immerse Yourself in Virtual Reality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== SECTION 1: Header + Hero + Why choose us ===== -->
+  <section class="hero-section">
+    <!-- decorative backgrounds -->
+    <img class="bg-grid" src="img/section-1/bg-grid.png" alt="" aria-hidden="true" />
+    <img class="bg-wave" src="img/section-1/bg-wave.png" alt="" aria-hidden="true" />
+    <div class="bg-light" aria-hidden="true"></div>
+
+    <header class="header container">
+      <a href="#" class="logo"><img src="img/section-1/logo.png" alt="VRNas" width="101" height="30" /></a>
+      <nav class="nav" id="nav">
+        <a href="#" class="nav__link is-active">Home</a>
+        <a href="#about" class="nav__link">About us</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#" class="nav__link has-dropdown">Page</a>
+        <a href="#" class="nav__link has-dropdown">Blog</a>
+      </nav>
+      <a href="#" class="btn-outline">Contact us</a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </header>
+
+    <div class="hero container">
+      <div class="hero__content">
+        <h1 class="hero__title">Immerse Yourself in Virtual Reality</h1>
+        <p class="hero__desc">Experience Unforgettable Events in VR. Bring your events to life like never before with our VR services</p>
+        <a href="#" class="btn-gradient">Discover more</a>
+
+        <div class="hero__meta">
+          <div class="happy-client">
+            <img src="img/section-1/happy-clients.png" alt="Happy clients" width="128" height="51" />
+            <p><span class="happy-client__num">32k+<svg class="swoosh" viewBox="0 0 48 7" aria-hidden="true"><defs><linearGradient id="sw" x1="0" x2="1"><stop offset="0" stop-color="#0cbaf1"/><stop offset="1" stop-color="#e95ce9"/></linearGradient></defs><path d="M1 6 C 14 1.5, 30 0.5, 47 1.5" fill="none" stroke="url(#sw)" stroke-width="1.6" stroke-linecap="round"/></svg></span> Happy Client</p>
+          </div>
+          <button class="video-thumb" type="button" aria-label="Play video">
+            <img src="img/section-1/video-thumb.png" alt="" width="196" height="128" />
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__image">
+        <img src="img/section-1/hero-man.png" alt="Man wearing a VR headset" width="526" height="626" />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="features">
+        <article class="feature">
+          <img src="img/section-1/icon-expertise.png" alt="" width="70" height="70" />
+          <h3>Expertise</h3>
+          <p>Our team consists of experienced VR developers, designers, and technicians who have a passion for VR and a commitment to delivering quality work and give the best service</p>
+        </article>
+        <article class="feature">
+          <img src="img/section-1/icon-customization.png" alt="" width="70" height="70" />
+          <h3>Customization</h3>
+          <p>Every client is unique, and we believe every VR experience should be too. We'll work with you to create a customized solution that meets your specific needs and goals</p>
+        </article>
+        <article class="feature">
+          <img src="img/section-1/icon-service.png" alt="" width="70" height="70" />
+          <h3>Service</h3>
+          <p>We believe in providing exceptional customer service, from initial consultation to final delivery. Our goal is to ensure you're satisfied with every aspect of your VR experience.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Keep the 1440px desktop layout and scale it proportionally on narrower screens (768–1440px)
+    const page = document.querySelector('.hero-section');
+    function fit() {
+      const w = document.documentElement.clientWidth;
+      page.style.zoom = (w >= 768 && w < 1440) ? (w / 1440) : '';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+
+    // Mobile menu
+    const burger = document.querySelector('.burger');
+    burger.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
